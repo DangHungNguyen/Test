@@ -1,0 +1,176 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+.container{
+  display: block;
+  width: 1170px;
+  margin: 30px auto;
+  border: 1px solid;
+  position: relative;
+}
+.flex_container{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.container__layout{
+  padding: 0 20px
+}
+.container__taskForm{
+  flex: 0 0 40%;
+  padding: 0 20px;
+}
+.container__list{
+  flex: 0 0 60%;
+  position: relative;
+}
+.container__list::before{
+  content: '';
+  position: absolute;
+  width: 1px;
+  background: #999999;
+  height: 100%;
+  left: 5%
+}
+.container_listItem{
+  position: relative;
+  padding: 0 40px 0 100px;
+}
+.list_item{
+  border: 1px solid;
+  padding: 20px 0;
+  margin: 0 0 20px;
+}
+.list_item > form{
+  border-top:1px solid;
+  margin: 20px 0 0;
+  padding: 20px;
+}
+.list_item_input{
+  padding: 0 20px 0;
+  position: relative;
+  display: block;
+}
+.btn-group-action{
+  display: block;
+  position: absolute;
+  top: -8px;
+  right: 0;
+}
+.btn-group-action > button{
+  margin: 0 20px 0 0;
+}
+.container_bulk_action{
+  position: relative;
+  left: 5%;
+  border: 1px solid;
+  width: 98.2%;
+  padding: 20px;
+  background: #dddddd;
+}
+.container_bulk_action .btn-action{
+  display: block;
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+}
+h2{
+  text-transform: capitalize;
+  text-align: center;
+  margin: 20px 0 40px;
+}
+.form-control, .date_picker{
+  display: block;
+  width: 100%;
+  height: 34px;
+  font-size: 13px;
+  padding: 6px 12px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+}
+.form-control{
+  border-radius: 4px;
+}
+.icon-date{
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 34px;
+  width: 50px;
+}
+label{
+  display: block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+.input-group-dueDate{
+  flex: 0 0 50%;
+  position: relative;
+}
+.react-datepicker-wrapper::after{
+  content: url('../src/calendar.png');
+  border: 1px solid #ccc;
+  width: 34px;
+  height: 32px;
+  position: absolute;
+  line-height: 34px;
+  text-align: center;
+}
+.input-group-priority{
+  flex: 0 0 45%;
+}
+.btn-success{
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+.btn-danger{
+  color: #fff;
+  background-color: #d9534f;
+  border-color: #d43f3a;
+}
+.btn-danger:hover{
+  background-color: #c9302c;
+  border-color: #ac2925;
+}
+.btn-info{
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+  margin: 0 20px 0 0;
+}
+.btn-info:hover{
+  background-color: #31b0d5;
+  border-color: #269abc;
+}
+.btn{
+  display: inline-block;
+  padding: 7px 20px;
+  margin-bottom: 0;
+  font-size: 13px;
+  cursor: pointer;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+.btn-success:hover{
+  background-color: #449d44;
+  border-color: #398439;
+}
+
+@media(max-width: 768px){
+  .container{border:none;width:100%;}
+  .container__taskForm, .input-group-dueDate, .container__list
+  {flex-basis: 100%;margin: 0 0 20px;}
+  .container__list::before{content:'';position: initial;}
+  .container__taskForm, .container_listItem{padding: 0}
+  .container_bulk_action{left:0}
+}
